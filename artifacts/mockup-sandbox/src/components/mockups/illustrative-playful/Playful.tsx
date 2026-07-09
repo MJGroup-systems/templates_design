@@ -2,6 +2,7 @@ import React from 'react';
 import { Heart, Stethoscope, Baby, Phone, MapPin, Clock, ArrowLeft, CalendarHeart, Sparkles } from 'lucide-react';
 
 const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
+const BASE = import.meta.env.BASE_URL;
 
 export default function PlayfulClinic() {
   return (
@@ -38,21 +39,21 @@ export default function PlayfulClinic() {
       <div className="font-friendly">
         {/* Navigation */}
         <nav className="relative z-10 flex items-center justify-between px-6 py-4 max-w-6xl mx-auto">
-          <div className="flex items-center gap-2">
+          <a href={BASE + "preview/illustrative-playful/Playful"} className="flex items-center gap-2 hover:opacity-90 transition-opacity">
             <div className="bg-[#FF8FA3] p-2 rounded-2xl blob-shape-1 text-white">
               <Heart size={24} fill="currentColor" strokeWidth={0} />
             </div>
             <span className="text-2xl font-bold text-[#FF8FA3]">קליניקת טיפה</span>
-          </div>
+          </a>
           <div className="hidden md:flex items-center gap-8 text-[#4A5568] font-medium">
-            <a href="#services" className="hover:text-[#FF8FA3] transition-colors">השירותים שלנו</a>
-            <a href="#about" className="hover:text-[#FF8FA3] transition-colors">הגישה שלנו</a>
-            <a href="#contact" className="hover:text-[#FF8FA3] transition-colors">יצירת קשר</a>
+            <a href={BASE + "preview/illustrative-playful/Services"} className="hover:text-[#FF8FA3] transition-colors">השירותים שלנו</a>
+            <a href={BASE + "preview/illustrative-playful/About"} className="hover:text-[#FF8FA3] transition-colors">הגישה שלנו</a>
+            <a href={BASE + "preview/illustrative-playful/Contact"} className="hover:text-[#FF8FA3] transition-colors">יצירת קשר</a>
           </div>
-          <button className="hidden md:flex items-center gap-2 bg-[#7CBFBF] hover:bg-[#68a8a8] text-white px-6 py-2.5 rounded-full font-medium transition-all hover:shadow-lg hover:-translate-y-0.5">
+          <a href={BASE + "preview/illustrative-playful/Contact"} className="hidden md:flex items-center gap-2 bg-[#7CBFBF] hover:bg-[#68a8a8] text-white px-6 py-2.5 rounded-full font-medium transition-all hover:shadow-lg hover:-translate-y-0.5">
             <CalendarHeart size={18} />
             <span>תיאום תור</span>
-          </button>
+          </a>
         </nav>
 
         {/* Hero Section */}
@@ -78,10 +79,10 @@ export default function PlayfulClinic() {
             </p>
             
             <div className="flex flex-col sm:flex-row items-center gap-4 pt-4 justify-center md:justify-start">
-              <button className="w-full sm:w-auto bg-[#FF8FA3] hover:bg-[#ff7b92] text-white px-8 py-3.5 rounded-full font-medium text-lg transition-all hover:shadow-xl hover:-translate-y-1 flex items-center justify-center gap-2">
+              <a href={BASE + "preview/illustrative-playful/Contact"} className="w-full sm:w-auto bg-[#FF8FA3] hover:bg-[#ff7b92] text-white px-8 py-3.5 rounded-full font-medium text-lg transition-all hover:shadow-xl hover:-translate-y-1 flex items-center justify-center gap-2">
                 <span>קבעו תור עכשיו</span>
                 <ArrowLeft size={20} />
-              </button>
+              </a>
               <button className="w-full sm:w-auto bg-white hover:bg-[#FDF3E7] text-[#4A5568] px-8 py-3.5 rounded-full font-medium text-lg transition-all shadow-sm flex items-center justify-center gap-2">
                 <Phone size={20} className="text-[#7CBFBF]" />
                 <span>03-123-4567</span>
@@ -246,9 +247,9 @@ export default function PlayfulClinic() {
                   <span className="text-gray-300" dir="ltr">03-123-4567</span>
                 </li>
               </ul>
-              <button className="mt-6 bg-[#7CBFBF] hover:bg-[#68a8a8] text-white px-8 py-3 rounded-full font-medium transition-all w-full md:w-auto shadow-md">
+              <a href={BASE + "preview/illustrative-playful/Contact"} className="inline-block mt-6 bg-[#7CBFBF] hover:bg-[#68a8a8] text-white px-8 py-3 rounded-full font-medium transition-all w-full md:w-auto shadow-md text-center border-none">
                 לתיאום פגישה
-              </button>
+              </a>
             </div>
             
             {/* Hours */}

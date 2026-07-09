@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 
+const BASE = import.meta.env.BASE_URL;
+
 const useScrollReveal = (options = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }) => {
   const ref = useRef<HTMLDivElement>(null);
   
@@ -107,10 +109,10 @@ export default function EditorialContactPage() {
           מיכל אבני.
         </div>
         <div className="flex gap-8 text-sm uppercase tracking-widest font-sans font-medium">
-          <a href="#" className="nav-link hidden md:block">בית</a>
-          <a href="#about" className="nav-link hidden md:block">אודות</a>
-          <a href="#services" className="nav-link hidden md:block">תחומי התמחות</a>
-          <a href="#contact" className="nav-link">יצירת קשר</a>
+          <a href={`${BASE}preview/editorial-typography/Editorial`} className="nav-link hidden md:block">בית</a>
+          <a href={`${BASE}preview/editorial-typography/About`} className="nav-link hidden md:block">אודות</a>
+          <a href={`${BASE}preview/editorial-typography/Services`} className="nav-link hidden md:block">תחומי התמחות</a>
+          <a href={`${BASE}preview/editorial-typography/Contact`} className="nav-link text-[var(--accent)]">יצירת קשר</a>
         </div>
       </nav>
 

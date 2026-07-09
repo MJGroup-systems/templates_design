@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Instagram, Facebook, MapPin, Clock, Phone, Mail, Send } from 'lucide-react';
 
+const BASE = import.meta.env.BASE_URL;
+
 const fadeIn = {
   hidden: { opacity: 0, y: 40 },
   visible: { 
@@ -59,14 +61,14 @@ export default function Contact() {
             שורש.
           </div>
           <div className="hidden md:flex gap-8 items-center text-lg font-semibold">
-            <a href="#" className="hover:text-[#B65842] transition-colors">ראשי</a>
-            <a href="#about" className="hover:text-[#B65842] transition-colors">אודות</a>
-            <a href="#services" className="hover:text-[#B65842] transition-colors">שירותים</a>
-            <a href="#contact" className="text-[#B65842] transition-colors">צור קשר</a>
+            <a href={`${BASE}preview/organic-earthy/Organic`} className="hover:text-[#B65842] transition-colors">ראשי</a>
+            <a href={`${BASE}preview/organic-earthy/About`} className="hover:text-[#B65842] transition-colors">אודות</a>
+            <a href={`${BASE}preview/organic-earthy/Services`} className="hover:text-[#B65842] transition-colors">שירותים</a>
+            <a href={`${BASE}preview/organic-earthy/Contact`} className="text-[#B65842] transition-colors">צור קשר</a>
           </div>
-          <button className="bg-[#B65842] text-[#F7F4EB] px-6 py-2.5 rounded-full font-semibold hover:bg-[#9C4835] transition-colors shadow-sm flex items-center gap-2">
+          <a href={`${BASE}preview/organic-earthy/Contact`} className="bg-[#B65842] text-[#F7F4EB] px-6 py-2.5 rounded-full font-semibold hover:bg-[#9C4835] transition-colors shadow-sm flex items-center gap-2 inline-flex">
             הזמינו שולחן
-          </button>
+          </a>
         </div>
       </nav>
 

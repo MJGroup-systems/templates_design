@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, MapPin, Clock, Phone, Instagram, Facebook, Leaf } from 'lucide-react';
 
+const BASE = import.meta.env.BASE_URL;
+
 const fadeIn = {
   hidden: { opacity: 0, y: 40 },
   visible: { 
@@ -97,14 +99,14 @@ export default function OrganicRestaurant() {
             שורש.
           </div>
           <div className="hidden md:flex gap-8 items-center text-lg font-semibold">
-            <a href="#" className="hover:text-[#B65842] transition-colors">ראשי</a>
-            <a href="#about" className="hover:text-[#B65842] transition-colors">אודות</a>
-            <a href="#services" className="hover:text-[#B65842] transition-colors">שירותים</a>
-            <a href="#contact" className="hover:text-[#B65842] transition-colors">צור קשר</a>
+            <a href={`${BASE}preview/organic-earthy/Organic`} className="text-[#B65842] transition-colors">ראשי</a>
+            <a href={`${BASE}preview/organic-earthy/About`} className="hover:text-[#B65842] transition-colors">אודות</a>
+            <a href={`${BASE}preview/organic-earthy/Services`} className="hover:text-[#B65842] transition-colors">שירותים</a>
+            <a href={`${BASE}preview/organic-earthy/Contact`} className="hover:text-[#B65842] transition-colors">צור קשר</a>
           </div>
-          <button className="bg-[#B65842] text-[#F7F4EB] px-6 py-2.5 rounded-full font-semibold hover:bg-[#9C4835] transition-colors shadow-sm flex items-center gap-2">
+          <a href={`${BASE}preview/organic-earthy/Contact`} className="bg-[#B65842] text-[#F7F4EB] px-6 py-2.5 rounded-full font-semibold hover:bg-[#9C4835] transition-colors shadow-sm flex items-center gap-2 inline-flex">
             הזמינו שולחן
-          </button>
+          </a>
         </div>
       </nav>
 
@@ -129,13 +131,13 @@ export default function OrganicRestaurant() {
                 אנחנו מאמינים שאוכל טוב מתחיל בשורשים. תוצרת מקומית, עונתית ואורגנית שמגיעה ישר מהשדה לצלחת שלכם, במינימום התערבות ומקסימום אהבה.
               </motion.p>
               <motion.div variants={fadeIn} className="flex flex-wrap gap-4">
-                <button className="bg-[#B65842] text-[#F7F4EB] px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#9C4835] transition-all hover:shadow-lg flex items-center gap-2 group">
+                <a href="#menu" className="bg-[#B65842] text-[#F7F4EB] px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#9C4835] transition-all hover:shadow-lg flex items-center gap-2 group inline-flex">
                   <span>תפריט העונה</span>
                   <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
-                </button>
-                <button className="bg-transparent border border-[#42372F] text-[#42372F] px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#42372F] hover:text-[#F7F4EB] transition-all">
+                </a>
+                <a href={`${BASE}preview/organic-earthy/About`} className="bg-transparent border border-[#42372F] text-[#42372F] px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#42372F] hover:text-[#F7F4EB] transition-all inline-block">
                   הסיפור שלנו
-                </button>
+                </a>
               </motion.div>
             </motion.div>
 
@@ -210,10 +212,10 @@ export default function OrganicRestaurant() {
               <h3 className="text-[#7D846C] font-bold text-lg mb-2">תפריט משתנה</h3>
               <h2 className="font-serif-he text-4xl md:text-5xl font-bold text-[#2A231E]">מהשדה לצלחת</h2>
             </div>
-            <button className="text-[#B65842] font-bold border-b-2 border-[#B65842] pb-1 hover:text-[#9C4835] hover:border-[#9C4835] transition-colors flex items-center gap-2">
+            <a href={`${BASE}preview/organic-earthy/Services`} className="text-[#B65842] font-bold border-b-2 border-[#B65842] pb-1 hover:text-[#9C4835] hover:border-[#9C4835] transition-colors flex items-center gap-2 inline-flex">
               לצפייה בתפריט המלא
               <ArrowLeft size={18} />
-            </button>
+            </a>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-12">

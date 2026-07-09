@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+const BASE = import.meta.env.BASE_URL;
+
 import { 
   ArrowLeft, 
   CheckCircle2, 
@@ -103,10 +105,10 @@ export default function FlowSaaS() {
   }, []);
 
   const navLinks = [
-    { name: 'בית', href: '#' },
-    { name: 'אודות', href: '#' },
-    { name: 'שירותים', href: '#' },
-    { name: 'צור קשר', href: '#' },
+    { name: 'בית', href: `${BASE}preview/tech-saas/SaaS` },
+    { name: 'אודות', href: `${BASE}preview/tech-saas/About` },
+    { name: 'שירותים', href: `${BASE}preview/tech-saas/Services` },
+    { name: 'צור קשר', href: `${BASE}preview/tech-saas/Contact` },
   ];
 
   return (
@@ -119,7 +121,7 @@ export default function FlowSaaS() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-12">
               {/* Logo */}
-              <a href="#" className="flex items-center gap-2 group">
+              <a href={`${BASE}preview/tech-saas/SaaS`} className="flex items-center gap-2 group">
                 <div className="w-8 h-8 rounded-lg bg-gradient-primary flex items-center justify-center text-white transform group-hover:rotate-12 transition-transform duration-300 shadow-md">
                   <Workflow size={20} />
                 </div>
@@ -134,7 +136,7 @@ export default function FlowSaaS() {
                   <a 
                     key={link.name} 
                     href={link.href}
-                    className="text-slate-600 hover:text-blue-600 font-medium transition-colors"
+                    className={`font-medium transition-colors ${link.name === 'בית' ? 'text-blue-600' : 'text-slate-600 hover:text-blue-600'}`}
                   >
                     {link.name}
                   </a>
@@ -172,7 +174,7 @@ export default function FlowSaaS() {
               <a 
                 key={link.name} 
                 href={link.href}
-                className="text-slate-900 font-medium pb-4 border-b border-slate-100"
+                className={`font-medium pb-4 border-b border-slate-100 ${link.name === 'בית' ? 'text-blue-600' : 'text-slate-900'}`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.name}
@@ -530,7 +532,7 @@ export default function FlowSaaS() {
                 <div className="mb-6">
                   <span className="text-4xl font-black text-slate-900">מותאם</span>
                 </div>
-                <a href="#" className="block w-full py-3 px-4 bg-slate-900 hover:bg-slate-800 text-white text-center rounded-xl font-bold transition-colors mb-8">
+                <a href={`${BASE}preview/tech-saas/Contact`} className="block w-full py-3 px-4 bg-slate-900 hover:bg-slate-800 text-white text-center rounded-xl font-bold transition-colors mb-8">
                   דבר עם המכירות
                 </a>
                 <ul className="space-y-4">
@@ -582,7 +584,7 @@ export default function FlowSaaS() {
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
             <div className="lg:col-span-2">
-              <a href="#" className="flex items-center gap-2 mb-6">
+              <a href={`${BASE}preview/tech-saas/SaaS`} className="flex items-center gap-2 mb-6">
                 <div className="w-8 h-8 rounded-lg bg-gradient-primary flex items-center justify-center text-white">
                   <Workflow size={20} />
                 </div>
@@ -606,9 +608,9 @@ export default function FlowSaaS() {
             <div>
               <h4 className="font-bold text-slate-900 mb-6 text-lg">מוצר</h4>
               <ul className="space-y-4">
-                <li><a href="#" className="text-slate-600 hover:text-blue-600 transition-colors">תכונות</a></li>
-                <li><a href="#" className="text-slate-600 hover:text-blue-600 transition-colors">אינטגרציות</a></li>
-                <li><a href="#" className="text-slate-600 hover:text-blue-600 transition-colors">תמחור</a></li>
+                <li><a href="#features" className="text-slate-600 hover:text-blue-600 transition-colors">תכונות</a></li>
+                <li><a href="#integrations" className="text-slate-600 hover:text-blue-600 transition-colors">אינטגרציות</a></li>
+                <li><a href="#pricing" className="text-slate-600 hover:text-blue-600 transition-colors">תמחור</a></li>
                 <li><a href="#" className="text-slate-600 hover:text-blue-600 transition-colors">עדכוני מערכת</a></li>
               </ul>
             </div>
@@ -626,9 +628,9 @@ export default function FlowSaaS() {
             <div>
               <h4 className="font-bold text-slate-900 mb-6 text-lg">חברה</h4>
               <ul className="space-y-4">
-                <li><a href="#" className="text-slate-600 hover:text-blue-600 transition-colors">אודות</a></li>
+                <li><a href={`${BASE}preview/tech-saas/About`} className="text-slate-600 hover:text-blue-600 transition-colors">אודות</a></li>
                 <li><a href="#" className="text-slate-600 hover:text-blue-600 transition-colors">דרושים</a></li>
-                <li><a href="#" className="text-slate-600 hover:text-blue-600 transition-colors">יצירת קשר</a></li>
+                <li><a href={`${BASE}preview/tech-saas/Contact`} className="text-slate-600 hover:text-blue-600 transition-colors">יצירת קשר</a></li>
                 <li><a href="#" className="text-slate-600 hover:text-blue-600 transition-colors">תנאי שימוש ופרטיות</a></li>
               </ul>
             </div>

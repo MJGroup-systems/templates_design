@@ -2,6 +2,7 @@ import React from 'react';
 import { Check, Phone, Mail, MapPin, ArrowLeft, Star } from 'lucide-react';
 
 export default function CleanMinimalismMockup() {
+  const BASE = import.meta.env.BASE_URL;
   return (
     <div dir="rtl" className="min-h-screen bg-[#fafaf9] text-[#1c1917] font-sans selection:bg-[#d6e2db] selection:text-[#1c1917]">
       {/* Navbar */}
@@ -11,13 +12,13 @@ export default function CleanMinimalismMockup() {
             ניקיון פלוס.
           </div>
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-[#57534e]">
-            <a href="#" className="text-[#1c1917] font-semibold transition-colors">בית</a>
-            <a href="#services" className="hover:text-[#1c1917] transition-colors">שירותים</a>
-            <a href="#about" className="hover:text-[#1c1917] transition-colors">אודות</a>
-            <a href="#contact" className="hover:text-[#1c1917] transition-colors">צור קשר</a>
+            <a href={`${BASE}preview/clean-minimalism/Clean`} className="text-[#1c1917] font-semibold transition-colors">בית</a>
+            <a href={`${BASE}preview/clean-minimalism/Services`} className="hover:text-[#1c1917] transition-colors">שירותים</a>
+            <a href={`${BASE}preview/clean-minimalism/About`} className="hover:text-[#1c1917] transition-colors">אודות</a>
+            <a href={`${BASE}preview/clean-minimalism/Contact`} className="hover:text-[#1c1917] transition-colors">צור קשר</a>
           </div>
           <div>
-            <a href="#contact" className="hidden md:inline-flex items-center justify-center bg-[#293d35] text-white px-6 py-2.5 text-sm font-medium hover:bg-[#1f2e28] transition-colors">
+            <a href={`${BASE}preview/clean-minimalism/Contact`} className="hidden md:inline-flex items-center justify-center bg-[#293d35] text-white px-6 py-2.5 text-sm font-medium hover:bg-[#1f2e28] transition-colors">
               הזמנת שירות
             </a>
           </div>
@@ -36,7 +37,7 @@ export default function CleanMinimalismMockup() {
               שירותי ניקיון מוקפדים לבתים ומשרדים. אנחנו לוקחים על עצמנו את העבודה הקשה, כדי שאתם תוכלו להתמקד במה שחשוב באמת.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="#contact" className="inline-flex items-center justify-center bg-[#293d35] text-white px-8 py-4 text-base font-medium hover:bg-[#1f2e28] transition-colors group">
+              <a href={`${BASE}preview/clean-minimalism/Contact`} className="inline-flex items-center justify-center bg-[#293d35] text-white px-8 py-4 text-base font-medium hover:bg-[#1f2e28] transition-colors group">
                 תיאום ייעוץ חינם
                 <ArrowLeft className="mr-2 w-4 h-4 group-hover:-translate-x-1 transition-transform" />
               </a>

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Phone, Mail, MapPin, ArrowLeft } from 'lucide-react';
 
+const BASE = import.meta.env.BASE_URL;
+
 export default function Services() {
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -47,10 +49,10 @@ export default function Services() {
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
           <div className="text-2xl font-bold tracking-tight">קליק<span className="text-[#B79A88]">.</span></div>
           <div className="hidden md:flex gap-8 text-sm font-medium tracking-wide">
-            <a href="#portfolio" className="hover:text-[#B79A88] transition-colors">עבודות</a>
-            <a href="#services" className="hover:text-[#B79A88] transition-colors">שירותים</a>
-            <a href="#about" className="hover:text-[#B79A88] transition-colors">הסטודיו</a>
-            <a href="#contact" className="hover:text-[#B79A88] transition-colors">צור קשר</a>
+            <a href={BASE + 'preview/visual-grid/Grid'} className="hover:text-[#B79A88] transition-colors">עבודות</a>
+            <a href={BASE + 'preview/visual-grid/Services'} className="text-[#B79A88] transition-colors">שירותים</a>
+            <a href={BASE + 'preview/visual-grid/About'} className="hover:text-[#B79A88] transition-colors">הסטודיו</a>
+            <a href={BASE + 'preview/visual-grid/Contact'} className="hover:text-[#B79A88] transition-colors">צור קשר</a>
           </div>
           <button className="md:hidden">
             <div className="w-6 h-0.5 bg-current mb-1.5"></div>
@@ -110,7 +112,7 @@ export default function Services() {
 
               <div className="flex items-center gap-6">
                 <span className="text-2xl font-medium">{service.price}</span>
-                <a href="#contact" className="text-[#B79A88] font-bold uppercase tracking-wider text-sm hover:text-[#1C1C1C] transition-colors flex items-center gap-2">
+                <a href={BASE + 'preview/visual-grid/Contact'} className="text-[#B79A88] font-bold uppercase tracking-wider text-sm hover:text-[#1C1C1C] transition-colors flex items-center gap-2">
                   לפרטים נוספים <ArrowLeft className="w-4 h-4" />
                 </a>
               </div>
@@ -130,7 +132,7 @@ export default function Services() {
           <p className="text-[#A0A0A0] leading-relaxed max-w-2xl mb-8">
             בעידן הדיגיטלי, אנחנו מאמינים בערך של תמונה שאפשר להחזיק ביד. הסטודיו מציע שירותי הדפסה איכותיים ואלבומי פרימיום בעבודת יד, בכריכות פשתן ועור לבחירתכם.
           </p>
-          <a href="#contact" className="border border-white/30 px-8 py-4 rounded-none font-medium hover:bg-white hover:text-[#1C1C1C] transition-colors">
+          <a href={BASE + 'preview/visual-grid/Contact'} className="border border-white/30 px-8 py-4 rounded-none font-medium hover:bg-white hover:text-[#1C1C1C] transition-colors">
             קטלוג מוצרים מלא
           </a>
         </div>

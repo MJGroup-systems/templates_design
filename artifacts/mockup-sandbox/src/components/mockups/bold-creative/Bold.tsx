@@ -53,6 +53,8 @@ const Reveal = ({
   );
 };
 
+const BASE = import.meta.env.BASE_URL;
+
 export default function LuxeStudio() {
   return (
     <div dir="rtl" className="bg-[#050505] min-h-screen text-[#F4F4F4] font-sans selection:bg-[#FF0055] selection:text-white overflow-x-hidden">
@@ -90,14 +92,14 @@ export default function LuxeStudio() {
       <nav className="fixed top-0 w-full z-40 p-6 flex justify-between items-center mix-blend-difference">
         <div className="text-3xl font-black tracking-tighter">לוקס.</div>
         <div className="hidden md:flex items-center gap-6 font-bold text-sm tracking-widest uppercase">
-          <a href="#" className="text-[#FF0055] transition-colors">בית</a>
-          <a href="#" className="hover:text-[#FF0055] transition-colors">אודות</a>
-          <a href="#" className="hover:text-[#FF0055] transition-colors">שירותים</a>
-          <a href="#" className="hover:text-[#FF0055] transition-colors">צור קשר</a>
+          <a href={BASE + "preview/bold-creative/Bold"} className="text-[#FF0055] transition-colors">בית</a>
+          <a href={BASE + "preview/bold-creative/About"} className="hover:text-[#FF0055] transition-colors">אודות</a>
+          <a href={BASE + "preview/bold-creative/Services"} className="hover:text-[#FF0055] transition-colors">שירותים</a>
+          <a href={BASE + "preview/bold-creative/Contact"} className="hover:text-[#FF0055] transition-colors">צור קשר</a>
         </div>
-        <button className="text-sm font-bold tracking-widest uppercase hover:text-[#FF0055] transition-colors border-b-2 border-transparent hover:border-[#FF0055] pb-1">
+        <a href={BASE + "preview/bold-creative/Contact"} className="text-sm font-bold tracking-widest uppercase hover:text-[#FF0055] transition-colors border-b-2 border-transparent hover:border-[#FF0055] pb-1">
           קבעי תור
-        </button>
+        </a>
       </nav>
 
       {/* 1. Hero Section */}
@@ -134,10 +136,10 @@ export default function LuxeStudio() {
             </Reveal>
 
             <Reveal direction="up" delay={400} className="mt-4">
-              <button className="group relative inline-flex items-center justify-center gap-4 bg-[#FF0055] text-white font-black text-xl px-8 py-5 border-2 border-transparent hover:border-white transition-all hover:-translate-y-1 hover:translate-x-1 hover:shadow-[6px_6px_0_0_#CCFF00]">
+              <a href={BASE + "preview/bold-creative/Contact"} className="group relative inline-flex items-center justify-center gap-4 bg-[#FF0055] text-white font-black text-xl px-8 py-5 border-2 border-transparent hover:border-white transition-all hover:-translate-y-1 hover:translate-x-1 hover:shadow-[6px_6px_0_0_#CCFF00]">
                 הזמיני תור עכשיו
                 <ArrowLeft className="group-hover:-translate-x-2 transition-transform duration-300" />
-              </button>
+              </a>
             </Reveal>
           </div>
 
@@ -179,7 +181,7 @@ export default function LuxeStudio() {
           {/* Service 1 */}
           <div className="md:col-span-6 relative">
             <Reveal direction="up" delay={100}>
-              <div className="group cursor-pointer">
+              <a href={BASE + "preview/bold-creative/Services"} className="block group cursor-pointer">
                 <div className="relative aspect-square overflow-hidden border-2 border-white/10 group-hover:border-[#FF0055] transition-colors duration-500">
                   <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
                   <img 
@@ -201,14 +203,14 @@ export default function LuxeStudio() {
                     לא עוד בלונד משעמם או קצוות יבשים. אנחנו יוצרות יצירות אמנות על הראש שלך. צבעים עזים, גזירות גיאומטריות, וסטייל שלא מתנצל.
                   </p>
                 </div>
-              </div>
+              </a>
             </Reveal>
           </div>
 
           {/* Service 2 - Offset */}
           <div className="md:col-span-5 md:col-start-8 mt-12 md:mt-32 relative">
             <Reveal direction="up" delay={200}>
-              <div className="group cursor-pointer">
+              <a href={BASE + "preview/bold-creative/Services"} className="block group cursor-pointer">
                 <div className="relative aspect-[4/5] overflow-hidden border-2 border-white/10 group-hover:border-[#CCFF00] transition-colors duration-500">
                   <div className="absolute inset-0 bg-[#FF0055]/20 group-hover:bg-transparent transition-colors duration-500 z-10 mix-blend-multiply"></div>
                   <img 
@@ -230,7 +232,7 @@ export default function LuxeStudio() {
                     מראה שגונב את ההצגה בכל חדר שאת נכנסת אליו. טקסטורות מבריקות, ליינרים חדים, ושילובים שגורמים לאנשים לעצור ולבהות.
                   </p>
                 </div>
-              </div>
+              </a>
             </Reveal>
           </div>
 
@@ -303,12 +305,12 @@ export default function LuxeStudio() {
           </Reveal>
 
           <Reveal direction="up" delay={150} className="w-full max-w-md">
-            <button className="w-full group relative flex items-center justify-between bg-white text-black font-black text-2xl md:text-3xl px-8 py-6 border-2 border-transparent hover:border-[#FF0055] transition-all hover:-translate-y-2 hover:translate-x-2 hover:shadow-[10px_10px_0_0_#FF0055]">
+            <a href={BASE + "preview/bold-creative/Contact"} className="w-full group relative flex items-center justify-between bg-white text-black font-black text-2xl md:text-3xl px-8 py-6 border-2 border-transparent hover:border-[#FF0055] transition-all hover:-translate-y-2 hover:translate-x-2 hover:shadow-[10px_10px_0_0_#FF0055]">
               <span>בואי נדבר.</span>
               <div className="bg-[#CCFF00] p-3 rounded-full group-hover:-translate-x-4 transition-transform duration-300">
                 <ArrowLeft size={32} className="text-black" />
               </div>
-            </button>
+            </a>
             <p className="mt-6 text-gray-500 font-medium tracking-wide">
               * קביעת תורים מראש בלבד. אין כניסה בלי וייב.
             </p>

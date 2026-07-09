@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+const BASE = import.meta.env.BASE_URL;
+
 import { 
   ArrowLeft, 
   Workflow,
@@ -54,10 +56,10 @@ export default function About() {
   }, []);
 
   const navLinks = [
-    { name: 'בית', href: '#' },
-    { name: 'אודות', href: '#' },
-    { name: 'שירותים', href: '#' },
-    { name: 'צור קשר', href: '#' },
+    { name: 'בית', href: `${BASE}preview/tech-saas/SaaS` },
+    { name: 'אודות', href: `${BASE}preview/tech-saas/About` },
+    { name: 'שירותים', href: `${BASE}preview/tech-saas/Services` },
+    { name: 'צור קשר', href: `${BASE}preview/tech-saas/Contact` },
   ];
 
   return (
@@ -69,7 +71,7 @@ export default function About() {
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-12">
-              <a href="#" className="flex items-center gap-2 group">
+              <a href={`${BASE}preview/tech-saas/SaaS`} className="flex items-center gap-2 group">
                 <div className="w-8 h-8 rounded-lg bg-gradient-primary flex items-center justify-center text-white transform group-hover:rotate-12 transition-transform duration-300 shadow-md">
                   <Workflow size={20} />
                 </div>
@@ -79,7 +81,7 @@ export default function About() {
               </a>
               <nav className="hidden md:flex items-center gap-8">
                 {navLinks.map((link) => (
-                  <a key={link.name} href={link.href} className="text-slate-600 hover:text-blue-600 font-medium transition-colors">
+                  <a key={link.name} href={link.href} className={`font-medium transition-colors ${link.name === 'אודות' ? 'text-blue-600' : 'text-slate-600 hover:text-blue-600'}`}>
                     {link.name}
                   </a>
                 ))}
@@ -104,7 +106,7 @@ export default function About() {
         <div className="fixed inset-0 z-40 bg-white pt-24 px-6 md:hidden">
           <nav className="flex flex-col gap-6 text-lg">
             {navLinks.map((link) => (
-              <a key={link.name} href={link.href} className="text-slate-900 font-medium pb-4 border-b border-slate-100" onClick={() => setMobileMenuOpen(false)}>
+              <a key={link.name} href={link.href} className={`font-medium pb-4 border-b border-slate-100 ${link.name === 'אודות' ? 'text-blue-600' : 'text-slate-900'}`} onClick={() => setMobileMenuOpen(false)}>
                 {link.name}
               </a>
             ))}
@@ -204,7 +206,7 @@ export default function About() {
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
             <div className="lg:col-span-2">
-              <a href="#" className="flex items-center gap-2 mb-6">
+              <a href={`${BASE}preview/tech-saas/SaaS`} className="flex items-center gap-2 mb-6">
                 <div className="w-8 h-8 rounded-lg bg-gradient-primary flex items-center justify-center text-white">
                   <Workflow size={20} />
                 </div>
@@ -227,9 +229,9 @@ export default function About() {
             <div>
               <h4 className="font-bold text-slate-900 mb-6 text-lg">מוצר</h4>
               <ul className="space-y-4">
-                <li><a href="#" className="text-slate-600 hover:text-blue-600 transition-colors">תכונות</a></li>
-                <li><a href="#" className="text-slate-600 hover:text-blue-600 transition-colors">אינטגרציות</a></li>
-                <li><a href="#" className="text-slate-600 hover:text-blue-600 transition-colors">תמחור</a></li>
+                <li><a href={`${BASE}preview/tech-saas/SaaS#features`} className="text-slate-600 hover:text-blue-600 transition-colors">תכונות</a></li>
+                <li><a href={`${BASE}preview/tech-saas/SaaS#integrations`} className="text-slate-600 hover:text-blue-600 transition-colors">אינטגרציות</a></li>
+                <li><a href={`${BASE}preview/tech-saas/SaaS#pricing`} className="text-slate-600 hover:text-blue-600 transition-colors">תמחור</a></li>
                 <li><a href="#" className="text-slate-600 hover:text-blue-600 transition-colors">עדכוני מערכת</a></li>
               </ul>
             </div>
@@ -247,9 +249,9 @@ export default function About() {
             <div>
               <h4 className="font-bold text-slate-900 mb-6 text-lg">חברה</h4>
               <ul className="space-y-4">
-                <li><a href="#" className="text-slate-600 hover:text-blue-600 transition-colors">אודות</a></li>
+                <li><a href={`${BASE}preview/tech-saas/About`} className="text-slate-600 hover:text-blue-600 transition-colors">אודות</a></li>
                 <li><a href="#" className="text-slate-600 hover:text-blue-600 transition-colors">דרושים</a></li>
-                <li><a href="#" className="text-slate-600 hover:text-blue-600 transition-colors">יצירת קשר</a></li>
+                <li><a href={`${BASE}preview/tech-saas/Contact`} className="text-slate-600 hover:text-blue-600 transition-colors">יצירת קשר</a></li>
                 <li><a href="#" className="text-slate-600 hover:text-blue-600 transition-colors">תנאי שימוש ופרטיות</a></li>
               </ul>
             </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import { Heart, CalendarHeart, Sparkles, Stethoscope, Baby, Syringe, ClipboardList, Activity, MapPin, Phone } from 'lucide-react';
 
 const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
+const BASE = import.meta.env.BASE_URL;
 
 export default function Services() {
   return (
@@ -37,22 +38,22 @@ export default function Services() {
       <div className="font-friendly">
         {/* Navigation */}
         <nav className="relative z-10 flex items-center justify-between px-6 py-4 max-w-6xl mx-auto">
-          <div className="flex items-center gap-2">
+          <a href={BASE + "preview/illustrative-playful/Playful"} className="flex items-center gap-2 hover:opacity-90 transition-opacity">
             <div className="bg-[#FF8FA3] p-2 rounded-2xl blob-shape-1 text-white">
               <Heart size={24} fill="currentColor" strokeWidth={0} />
             </div>
             <span className="text-2xl font-bold text-[#FF8FA3]">קליניקת טיפה</span>
-          </div>
+          </a>
           <div className="hidden md:flex items-center gap-8 text-[#4A5568] font-medium">
-            <a href="#home" className="hover:text-[#FF8FA3] transition-colors">עמוד הבית</a>
-            <a href="#about" className="hover:text-[#FF8FA3] transition-colors">אודות</a>
-            <a href="#services" className="text-[#FF8FA3] transition-colors">שירותים</a>
-            <a href="#contact" className="hover:text-[#FF8FA3] transition-colors">צור קשר</a>
+            <a href={BASE + "preview/illustrative-playful/Playful"} className="hover:text-[#FF8FA3] transition-colors">עמוד הבית</a>
+            <a href={BASE + "preview/illustrative-playful/About"} className="hover:text-[#FF8FA3] transition-colors">אודות</a>
+            <a href={BASE + "preview/illustrative-playful/Services"} className="text-[#FF8FA3] transition-colors">שירותים</a>
+            <a href={BASE + "preview/illustrative-playful/Contact"} className="hover:text-[#FF8FA3] transition-colors">צור קשר</a>
           </div>
-          <button className="hidden md:flex items-center gap-2 bg-[#7CBFBF] hover:bg-[#68a8a8] text-white px-6 py-2.5 rounded-full font-medium transition-all hover:shadow-lg hover:-translate-y-0.5">
+          <a href={BASE + "preview/illustrative-playful/Contact"} className="hidden md:flex items-center gap-2 bg-[#7CBFBF] hover:bg-[#68a8a8] text-white px-6 py-2.5 rounded-full font-medium transition-all hover:shadow-lg hover:-translate-y-0.5 border-none">
             <CalendarHeart size={18} />
             <span>תיאום תור</span>
-          </button>
+          </a>
         </nav>
 
         {/* Services Hero Section */}
@@ -132,9 +133,9 @@ export default function Services() {
                 <p className="text-[#4A5568] mb-4 max-w-2xl">
                   אנו מציעים שירותי אבחון מתקדמים וחוות דעת שנייה למגוון מצבים רפואיים, בשיתוף פעולה עם מומחים מכל קשת הרפואה. אנחנו מבינים שלפעמים צריך עוד עין מקצועית כדי לקבל החלטה בטוחה.
                 </p>
-                <button className="text-sm font-bold text-[#FF8FA3] flex items-center gap-1 hover:gap-2 transition-all">
+                <a href={BASE + "preview/illustrative-playful/Contact"} className="inline-block mt-6 bg-[#7CBFBF] hover:bg-[#68a8a8] text-white px-8 py-3 rounded-full font-medium transition-all w-full md:w-auto shadow-md text-center border-none">
                   למידע נוסף
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -207,9 +208,9 @@ export default function Services() {
                   <span className="text-gray-300" dir="ltr">03-123-4567</span>
                 </li>
               </ul>
-              <button className="mt-6 bg-[#7CBFBF] hover:bg-[#68a8a8] text-white px-8 py-3 rounded-full font-medium transition-all w-full md:w-auto shadow-md">
+              <a href={BASE + "preview/illustrative-playful/Contact"} className="inline-block mt-6 bg-[#7CBFBF] hover:bg-[#68a8a8] text-white px-8 py-3 rounded-full font-medium transition-all w-full md:w-auto shadow-md text-center border-none">
                 לתיאום פגישה
-              </button>
+              </a>
             </div>
             
             {/* Hours */}

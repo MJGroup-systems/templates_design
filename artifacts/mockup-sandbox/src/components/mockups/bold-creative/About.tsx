@@ -51,6 +51,8 @@ const Reveal = ({
   );
 };
 
+const BASE = import.meta.env.BASE_URL;
+
 export default function About() {
   return (
     <div dir="rtl" className="bg-[#050505] min-h-screen text-[#F4F4F4] font-sans selection:bg-[#FF0055] selection:text-white overflow-x-hidden">
@@ -78,14 +80,14 @@ export default function About() {
       <nav className="fixed top-0 w-full z-40 p-6 flex justify-between items-center mix-blend-difference">
         <div className="text-3xl font-black tracking-tighter">לוקס.</div>
         <div className="hidden md:flex items-center gap-6 font-bold text-sm tracking-widest uppercase">
-          <a href="#" className="hover:text-[#FF0055] transition-colors">בית</a>
-          <a href="#" className="text-[#FF0055] transition-colors">אודות</a>
-          <a href="#" className="hover:text-[#FF0055] transition-colors">שירותים</a>
-          <a href="#" className="hover:text-[#FF0055] transition-colors">צור קשר</a>
+          <a href={BASE + "preview/bold-creative/Bold"} className="hover:text-[#FF0055] transition-colors">בית</a>
+          <a href={BASE + "preview/bold-creative/About"} className="text-[#FF0055] transition-colors">אודות</a>
+          <a href={BASE + "preview/bold-creative/Services"} className="hover:text-[#FF0055] transition-colors">שירותים</a>
+          <a href={BASE + "preview/bold-creative/Contact"} className="hover:text-[#FF0055] transition-colors">צור קשר</a>
         </div>
-        <button className="text-sm font-bold tracking-widest uppercase hover:text-[#FF0055] transition-colors border-b-2 border-transparent hover:border-[#FF0055] pb-1">
+        <a href={BASE + "preview/bold-creative/Contact"} className="text-sm font-bold tracking-widest uppercase hover:text-[#FF0055] transition-colors border-b-2 border-transparent hover:border-[#FF0055] pb-1">
           קבעי תור
-        </button>
+        </a>
       </nav>
 
       {/* Hero */}
@@ -195,12 +197,12 @@ export default function About() {
             </h2>
           </Reveal>
           <Reveal direction="up" delay={150} className="w-full max-w-md">
-            <button className="w-full group relative flex items-center justify-between bg-white text-black font-black text-2xl md:text-3xl px-8 py-6 border-2 border-transparent hover:border-[#FF0055] transition-all hover:-translate-y-2 hover:translate-x-2 hover:shadow-[10px_10px_0_0_#FF0055]">
+            <a href={BASE + "preview/bold-creative/Contact"} className="w-full group relative flex items-center justify-between bg-white text-black font-black text-2xl md:text-3xl px-8 py-6 border-2 border-transparent hover:border-[#FF0055] transition-all hover:-translate-y-2 hover:translate-x-2 hover:shadow-[10px_10px_0_0_#FF0055]">
               <span>בואי נדבר.</span>
               <div className="bg-[#CCFF00] p-3 rounded-full group-hover:-translate-x-4 transition-transform duration-300">
                 <ArrowLeft size={32} className="text-black" />
               </div>
-            </button>
+            </a>
             <p className="mt-6 text-gray-500 font-medium tracking-wide">
               * קביעת תורים מראש בלבד. אין כניסה בלי וייב.
             </p>

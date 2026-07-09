@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
 
+const BASE = import.meta.env.BASE_URL;
+
 export default function About() {
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -20,10 +22,10 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
           <div className="text-2xl font-bold tracking-tight">קליק<span className="text-[#B79A88]">.</span></div>
           <div className="hidden md:flex gap-8 text-sm font-medium tracking-wide">
-            <a href="#portfolio" className="hover:text-[#B79A88] transition-colors">עבודות</a>
-            <a href="#services" className="hover:text-[#B79A88] transition-colors">שירותים</a>
-            <a href="#about" className="hover:text-[#B79A88] transition-colors">הסטודיו</a>
-            <a href="#contact" className="hover:text-[#B79A88] transition-colors">צור קשר</a>
+            <a href={BASE + 'preview/visual-grid/Grid'} className="hover:text-[#B79A88] transition-colors">עבודות</a>
+            <a href={BASE + 'preview/visual-grid/Services'} className="hover:text-[#B79A88] transition-colors">שירותים</a>
+            <a href={BASE + 'preview/visual-grid/About'} className="text-[#B79A88] transition-colors">הסטודיו</a>
+            <a href={BASE + 'preview/visual-grid/Contact'} className="hover:text-[#B79A88] transition-colors">צור קשר</a>
           </div>
           <button className="md:hidden">
             <div className="w-6 h-0.5 bg-current mb-1.5"></div>

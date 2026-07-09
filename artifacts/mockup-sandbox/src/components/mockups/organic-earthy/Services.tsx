@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Instagram, Facebook, ArrowLeft, Calendar, ChefHat, PartyPopper } from 'lucide-react';
 
+const BASE = import.meta.env.BASE_URL;
+
 const fadeIn = {
   hidden: { opacity: 0, y: 40 },
   visible: { 
@@ -72,14 +74,14 @@ export default function Services() {
             שורש.
           </div>
           <div className="hidden md:flex gap-8 items-center text-lg font-semibold">
-            <a href="#" className="hover:text-[#B65842] transition-colors">ראשי</a>
-            <a href="#about" className="hover:text-[#B65842] transition-colors">אודות</a>
-            <a href="#services" className="text-[#B65842] transition-colors">שירותים</a>
-            <a href="#contact" className="hover:text-[#B65842] transition-colors">צור קשר</a>
+            <a href={`${BASE}preview/organic-earthy/Organic`} className="hover:text-[#B65842] transition-colors">ראשי</a>
+            <a href={`${BASE}preview/organic-earthy/About`} className="hover:text-[#B65842] transition-colors">אודות</a>
+            <a href={`${BASE}preview/organic-earthy/Services`} className="text-[#B65842] transition-colors">שירותים</a>
+            <a href={`${BASE}preview/organic-earthy/Contact`} className="hover:text-[#B65842] transition-colors">צור קשר</a>
           </div>
-          <button className="bg-[#B65842] text-[#F7F4EB] px-6 py-2.5 rounded-full font-semibold hover:bg-[#9C4835] transition-colors shadow-sm flex items-center gap-2">
+          <a href={`${BASE}preview/organic-earthy/Contact`} className="bg-[#B65842] text-[#F7F4EB] px-6 py-2.5 rounded-full font-semibold hover:bg-[#9C4835] transition-colors shadow-sm flex items-center gap-2 inline-flex">
             הזמינו שולחן
-          </button>
+          </a>
         </div>
       </nav>
 
@@ -142,9 +144,9 @@ export default function Services() {
                 <li className="flex items-center gap-3"><span className="w-2 h-2 rounded-full bg-[#7D846C]"></span> עיצוב פרחים וצמחיה טבעית</li>
                 <li className="flex items-center gap-3"><span className="w-2 h-2 rounded-full bg-[#7D846C]"></span> ליווי צמוד של מנהל אירוע</li>
               </motion.ul>
-              <motion.button variants={fadeIn} className="text-[#B65842] font-bold border-b-2 border-[#B65842] pb-1 hover:text-[#9C4835] hover:border-[#9C4835] transition-colors flex items-center gap-2">
+              <motion.a href={`${BASE}preview/organic-earthy/Contact`} variants={fadeIn} className="text-[#B65842] font-bold border-b-2 border-[#B65842] pb-1 hover:text-[#9C4835] hover:border-[#9C4835] transition-colors flex items-center gap-2 inline-flex">
                 לקבלת הצעת מחיר <ArrowLeft size={18} />
-              </motion.button>
+              </motion.a>
             </motion.div>
           </div>
 
@@ -174,9 +176,9 @@ export default function Services() {
                 </div>
                 <div className="text-[#B65842] font-serif-he font-bold text-2xl">₪380</div>
               </motion.div>
-              <motion.button variants={fadeIn} className="text-[#B65842] font-bold border-b-2 border-[#B65842] pb-1 hover:text-[#9C4835] hover:border-[#9C4835] transition-colors flex items-center gap-2">
+              <motion.a href={`${BASE}preview/organic-earthy/Contact`} variants={fadeIn} className="text-[#B65842] font-bold border-b-2 border-[#B65842] pb-1 hover:text-[#9C4835] hover:border-[#9C4835] transition-colors flex items-center gap-2 inline-flex cursor-pointer">
                 להרשמה לסדנאות <ArrowLeft size={18} />
-              </motion.button>
+              </motion.a>
             </motion.div>
             <motion.div 
               initial="hidden"

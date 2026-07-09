@@ -7,6 +7,15 @@ const IMAGES = {
   boardroom: "/__mockup/images/law-firm-boardroom.jpg"
 };
 
+const BASE = import.meta.env.BASE_URL;
+
+const NAV_LINKS = [
+  { name: 'בית', href: `${BASE}preview/dark-luxury/Luxury` },
+  { name: 'אודות', href: `${BASE}preview/dark-luxury/About` },
+  { name: 'שירותים', href: `${BASE}preview/dark-luxury/Services` },
+  { name: 'צור קשר', href: `${BASE}preview/dark-luxury/Contact` }
+];
+
 function useIntersectionObserver(options = {}) {
   const [isIntersecting, setIsIntersecting] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -57,8 +66,6 @@ export default function Services() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const navItems = ['בית', 'אודות', 'שירותים', 'צור קשר'];
 
   return (
     <div dir="rtl" className="bg-[#050505] text-[#e2e0d9] min-h-screen overflow-x-hidden selection:bg-[#c2a672]/30 selection:text-white font-sans-he">
@@ -119,16 +126,16 @@ export default function Services() {
           </div>
           
           <nav className="hidden md:flex gap-10">
-            {navItems.map((item, i) => (
-              <a key={i} href="#" className="text-sm tracking-wider text-[#a19f99] hover:text-[#c2a672] transition-colors duration-300">
-                {item}
+            {NAV_LINKS.map((item, i) => (
+              <a key={i} href={item.href} className={`text-sm tracking-wider hover:text-[#c2a672] transition-colors duration-300 ${item.name === 'שירותים' ? 'text-[#c2a672]' : 'text-[#a19f99]'}`}>
+                {item.name}
               </a>
             ))}
           </nav>
 
-          <button className="hidden md:flex items-center gap-2 border border-[#c2a672]/40 px-6 py-2.5 text-sm tracking-wider text-[#f5f4f0] hover:bg-[#c2a672] hover:text-[#050505] transition-all duration-500">
+          <a href={NAV_LINKS[3].href} className="hidden md:flex items-center gap-2 border border-[#c2a672]/40 px-6 py-2.5 text-sm tracking-wider text-[#f5f4f0] hover:bg-[#c2a672] hover:text-[#050505] transition-all duration-500">
             תיאום פגישה
-          </button>
+          </a>
 
           <button className="md:hidden text-white relative z-20" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             {isMobileMenuOpen ? <X /> : <Menu />}
@@ -137,12 +144,12 @@ export default function Services() {
 
         {/* Mobile Menu */}
         <div className={`md:hidden fixed inset-0 bg-[#050505] z-10 transition-transform duration-500 flex flex-col items-center justify-center gap-8 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-          {navItems.map((item, i) => (
-            <a key={i} href="#" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-serif-he text-white hover:text-[#c2a672] transition-colors">
-              {item}
+          {NAV_LINKS.map((item, i) => (
+            <a key={i} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className={`text-2xl font-serif-he hover:text-[#c2a672] transition-colors ${item.name === 'שירותים' ? 'text-[#c2a672]' : 'text-white'}`}>
+              {item.name}
             </a>
           ))}
-          <button className="mt-8 border border-[#c2a672]/40 px-8 py-3 text-[#c2a672]">תיאום פגישה</button>
+          <a href={NAV_LINKS[3].href} className="mt-8 border border-[#c2a672]/40 px-8 py-3 text-[#c2a672] text-center inline-block">תיאום פגישה</a>
         </div>
       </header>
 
@@ -261,9 +268,9 @@ export default function Services() {
                 כמשרד בוטיק המתמחה בלקוחות פרימיום, אנו מציעים מודלי התקשרות המותאמים אישית לאופי התיק וליעדי הלקוח. אנו דוגלים בשקיפות מוחלטת והתאמה אסטרטגית של מבנה שכר הטרחה.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-6">
-                <button className="bg-[#c2a672] text-[#050505] px-8 py-4 font-semibold tracking-wide hover:bg-[#e8d5a5] transition-colors">
+                <a href={NAV_LINKS[3].href} className="bg-[#c2a672] text-[#050505] px-8 py-4 font-semibold tracking-wide hover:bg-[#e8d5a5] transition-colors text-center inline-block">
                   קביעת פגישת אבחון
-                </button>
+                </a>
               </div>
             </div>
           </Reveal>
@@ -293,8 +300,8 @@ export default function Services() {
             <div>
               <h4 className="text-white mb-6 tracking-wider text-sm">ניווט</h4>
               <ul className="text-[#a19f99] text-sm space-y-3 font-light">
-                {navItems.map(item => (
-                  <li key={item}><a href="#" className="hover:text-[#c2a672] transition-colors">{item}</a></li>
+                {NAV_LINKS.map(item => (
+                  <li key={item.name}><a href={item.href} className={`hover:text-[#c2a672] transition-colors ${item.name === 'שירותים' ? 'text-[#c2a672]' : ''}`}>{item.name}</a></li>
                 ))}
               </ul>
             </div>

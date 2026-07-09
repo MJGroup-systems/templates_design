@@ -8,6 +8,15 @@ const IMAGES = {
   boardroom: "/__mockup/images/law-firm-boardroom.jpg"
 };
 
+const BASE = import.meta.env.BASE_URL;
+
+const NAV_LINKS = [
+  { name: 'בית', href: `${BASE}preview/dark-luxury/Luxury` },
+  { name: 'אודות', href: `${BASE}preview/dark-luxury/About` },
+  { name: 'שירותים', href: `${BASE}preview/dark-luxury/Services` },
+  { name: 'צור קשר', href: `${BASE}preview/dark-luxury/Contact` }
+];
+
 // Intersection Observer Hook for scroll animations
 function useIntersectionObserver(options = {}) {
   const [isIntersecting, setIsIntersecting] = useState(false);
@@ -120,16 +129,16 @@ export default function LuxuryLawFirm() {
           </div>
           
           <nav className="hidden md:flex gap-10">
-            {['בית', 'אודות', 'שירותים', 'צור קשר'].map((item, i) => (
-              <a key={i} href={`#${item}`} className="text-sm tracking-wider text-[#a19f99] hover:text-[#c2a672] transition-colors duration-300">
-                {item}
+            {NAV_LINKS.map((item, i) => (
+              <a key={i} href={item.href} className={`text-sm tracking-wider hover:text-[#c2a672] transition-colors duration-300 ${item.name === 'בית' ? 'text-[#c2a672]' : 'text-[#a19f99]'}`}>
+                {item.name}
               </a>
             ))}
           </nav>
 
-          <button className="hidden md:flex items-center gap-2 border border-[#c2a672]/40 px-6 py-2.5 text-sm tracking-wider text-[#f5f4f0] hover:bg-[#c2a672] hover:text-[#050505] transition-all duration-500">
+          <a href={NAV_LINKS[3].href} className="hidden md:flex items-center gap-2 border border-[#c2a672]/40 px-6 py-2.5 text-sm tracking-wider text-[#f5f4f0] hover:bg-[#c2a672] hover:text-[#050505] transition-all duration-500">
             תיאום פגישה
-          </button>
+          </a>
 
           <button className="md:hidden text-white relative z-20" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             {isMobileMenuOpen ? <X /> : <Menu />}
@@ -138,12 +147,12 @@ export default function LuxuryLawFirm() {
 
         {/* Mobile Menu */}
         <div className={`md:hidden fixed inset-0 bg-[#050505] z-10 transition-transform duration-500 flex flex-col items-center justify-center gap-8 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-          {['בית', 'אודות', 'שירותים', 'צור קשר'].map((item, i) => (
-            <a key={i} href={`#${item}`} onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-serif-he text-white hover:text-[#c2a672] transition-colors">
-              {item}
+          {NAV_LINKS.map((item, i) => (
+            <a key={i} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className={`text-2xl font-serif-he hover:text-[#c2a672] transition-colors ${item.name === 'בית' ? 'text-[#c2a672]' : 'text-white'}`}>
+              {item.name}
             </a>
           ))}
-          <button className="mt-8 border border-[#c2a672]/40 px-8 py-3 text-[#c2a672]">תיאום פגישה</button>
+          <a href={NAV_LINKS[3].href} className="mt-8 border border-[#c2a672]/40 px-8 py-3 text-[#c2a672] text-center inline-block">תיאום פגישה</a>
         </div>
       </header>
 
@@ -179,14 +188,14 @@ export default function LuxuryLawFirm() {
             </Reveal>
             <Reveal delay={700}>
               <div className="flex flex-col sm:flex-row gap-6">
-                <button className="group relative overflow-hidden bg-[#c2a672] text-[#050505] px-8 py-4 flex items-center justify-center gap-3 transition-transform hover:scale-[1.02]">
+                <a href={NAV_LINKS[3].href} className="group relative overflow-hidden bg-[#c2a672] text-[#050505] px-8 py-4 flex items-center justify-center gap-3 transition-transform hover:scale-[1.02]">
                   <span className="relative z-10 font-semibold tracking-wide">התחל דיאלוג</span>
                   <ArrowLeft className="relative z-10 w-4 h-4 transition-transform group-hover:-translate-x-2" />
                   <div className="absolute inset-0 bg-white/20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
-                </button>
-                <button className="group px-8 py-4 flex items-center justify-center gap-3 border border-white/20 text-white hover:border-[#c2a672]/60 hover:text-[#c2a672] transition-colors duration-500">
+                </a>
+                <a href={NAV_LINKS[2].href} className="group px-8 py-4 flex items-center justify-center gap-3 border border-white/20 text-white hover:border-[#c2a672]/60 hover:text-[#c2a672] transition-colors duration-500">
                   <span className="tracking-wide">תחומי התמחות</span>
-                </button>
+                </a>
               </div>
             </Reveal>
           </div>
@@ -254,10 +263,10 @@ export default function LuxuryLawFirm() {
                 </div>
                 <h2 className="font-serif-he text-4xl md:text-5xl text-white">מומחיות ללא פשרות.</h2>
               </div>
-              <button className="flex items-center gap-2 text-sm text-[#a19f99] hover:text-[#c2a672] transition-colors group pb-2 border-b border-transparent hover:border-[#c2a672]">
+              <a href={NAV_LINKS[2].href} className="flex items-center gap-2 text-sm text-[#a19f99] hover:text-[#c2a672] transition-colors group pb-2 border-b border-transparent hover:border-[#c2a672]">
                 כל תחומי העיסוק
                 <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-2" />
-              </button>
+              </a>
             </div>
           </Reveal>
 
@@ -269,7 +278,7 @@ export default function LuxuryLawFirm() {
               { icon: Shield, title: "ניהול הון משפחתי", desc: "הגנה על נכסים, נאמנויות, תכנון בין-דורי וייצוג משפחות עתירות הון בסטנדרט הגלובלי הגבוה ביותר." }
             ].map((area, i) => (
               <Reveal key={i} delay={i * 150}>
-                <div className="group bg-[#121214] border border-white/5 p-8 h-full transition-all duration-500 hover:bg-[#151518] hover:border-[#c2a672]/30 relative overflow-hidden cursor-pointer">
+                <a href={NAV_LINKS[2].href} className="block group bg-[#121214] border border-white/5 p-8 h-full transition-all duration-500 hover:bg-[#151518] hover:border-[#c2a672]/30 relative overflow-hidden cursor-pointer">
                   <div className="absolute top-0 right-0 w-full h-1 bg-gradient-to-l from-[#c2a672] to-transparent transform scale-x-0 origin-right transition-transform duration-500 group-hover:scale-x-100"></div>
                   <area.icon className="w-10 h-10 text-[#c2a672]/70 mb-6 stroke-[1.5] transition-transform duration-500 group-hover:scale-110" />
                   <h3 className="font-serif-he text-2xl text-white mb-4">{area.title}</h3>
@@ -277,7 +286,7 @@ export default function LuxuryLawFirm() {
                   <div className="mt-8 flex items-center gap-2 text-[#c2a672] text-sm opacity-0 transform translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
                     קרא עוד <ArrowLeft className="w-4 h-4" />
                   </div>
-                </div>
+                </a>
               </Reveal>
             ))}
           </div>
@@ -331,9 +340,9 @@ export default function LuxuryLawFirm() {
                 <p className="text-[#a19f99] font-light leading-relaxed mb-10">
                   תפיסת העולם שלנו דוגלת בירידה לפרטים הקטנים ביותר, מתוך הבנה כי דווקא שם מסתתרים הפתרונות המבריקים ביותר שיכריעו את הכף לטובת הלקוח.
                 </p>
-                <button className="text-white hover:text-[#c2a672] border-b border-[#c2a672]/30 hover:border-[#c2a672] pb-1 transition-colors flex items-center gap-2 text-sm uppercase tracking-wider group">
+                <a href={NAV_LINKS[1].href} className="w-fit text-white hover:text-[#c2a672] border-b border-[#c2a672]/30 hover:border-[#c2a672] pb-1 transition-colors flex items-center gap-2 text-sm uppercase tracking-wider group">
                   הכר את השותפים <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-2" />
-                </button>
+                </a>
               </Reveal>
             </div>
           </div>
@@ -416,8 +425,8 @@ export default function LuxuryLawFirm() {
             <div>
               <h4 className="text-white mb-6 tracking-wider text-sm">ניווט</h4>
               <ul className="text-[#a19f99] text-sm space-y-3 font-light">
-                {['בית', 'אודות', 'שירותים', 'צור קשר'].map(item => (
-                  <li key={item}><a href={`#${item}`} className="hover:text-[#c2a672] transition-colors">{item}</a></li>
+                {NAV_LINKS.map(item => (
+                  <li key={item.name}><a href={item.href} className={`hover:text-[#c2a672] transition-colors ${item.name === 'בית' ? 'text-[#c2a672]' : ''}`}>{item.name}</a></li>
                 ))}
               </ul>
             </div>

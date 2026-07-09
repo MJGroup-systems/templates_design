@@ -1,6 +1,8 @@
 import React from 'react';
 import { MapPin, Clock, Star, Instagram, Facebook, Phone, Menu, Heart, Award, Flame, Smile } from 'lucide-react';
 
+const BASE = import.meta.env.BASE_URL;
+
 const styles = `
   @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&family=Suez+One&display=swap');
 
@@ -62,33 +64,33 @@ export default function AboutDiner() {
       {/* Header */}
       <header className="border-b-4 border-[#252422] bg-[#F4EFE6] sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-2 hover:scale-105 transition-transform cursor-pointer">
+          <a href={`${BASE}preview/modern-retro/Retro`} className="flex items-center gap-2 hover:scale-105 transition-transform cursor-pointer">
             <span className="font-display text-3xl tracking-wide text-[#D1492E] drop-shadow-[2px_2px_0_#252422]">דיינר 66</span>
-          </div>
+          </a>
 
           <nav className="hidden md:flex items-center gap-8 font-bold text-lg">
-            <a href="#" className="hover:text-[#D1492E] transition-colors relative group">
+            <a href={`${BASE}preview/modern-retro/Retro`} className="hover:text-[#D1492E] transition-colors relative group">
               בית
               <span className="absolute -bottom-1 left-0 w-full h-1 bg-[#D1492E] origin-right scale-x-0 group-hover:scale-x-100 transition-transform"></span>
             </a>
-            <a href="#" className="hover:text-[#D1492E] transition-colors relative group text-[#D1492E]">
+            <a href={`${BASE}preview/modern-retro/About`} className="hover:text-[#D1492E] transition-colors relative group text-[#D1492E]">
               אודות
               <span className="absolute -bottom-1 left-0 w-full h-1 bg-[#D1492E] origin-right scale-x-100 transition-transform"></span>
             </a>
-            <a href="#" className="hover:text-[#D1492E] transition-colors relative group">
+            <a href={`${BASE}preview/modern-retro/Services`} className="hover:text-[#D1492E] transition-colors relative group">
               שירותים
               <span className="absolute -bottom-1 left-0 w-full h-1 bg-[#D1492E] origin-right scale-x-0 group-hover:scale-x-100 transition-transform"></span>
             </a>
-            <a href="#" className="hover:text-[#D1492E] transition-colors relative group">
+            <a href={`${BASE}preview/modern-retro/Contact`} className="hover:text-[#D1492E] transition-colors relative group">
               צור קשר
               <span className="absolute -bottom-1 left-0 w-full h-1 bg-[#D1492E] origin-right scale-x-0 group-hover:scale-x-100 transition-transform"></span>
             </a>
           </nav>
 
           <div className="flex items-center gap-4">
-            <button className="hidden md:flex bg-[#EAAA00] px-6 py-2 font-display text-lg retro-border retro-shadow retro-shadow-hover">
+            <a href={`${BASE}preview/modern-retro/Contact`} className="hidden md:flex bg-[#EAAA00] px-6 py-2 font-display text-lg retro-border retro-shadow retro-shadow-hover text-[#252422]">
               הזמן שולחן
-            </button>
+            </a>
             <button className="md:hidden">
               <Menu className="w-8 h-8" />
             </button>
@@ -184,9 +186,9 @@ export default function AboutDiner() {
               החל מהטבחים שמנצחים על הפס, דרך הברמנים שמקשקשים מילקשייקים, 
               ועד למלצרים שמכירים כל לקוח קבוע. אנחנו לא סתם מסעדה, אנחנו בית.
             </p>
-            <button className="bg-[#F4EFE6] text-[#252422] px-8 py-4 font-display text-2xl retro-border retro-shadow-hover hover:bg-[#EAAA00] transition-colors inline-flex items-center gap-3">
+            <a href={`${BASE}preview/modern-retro/Contact`} className="bg-[#F4EFE6] text-[#252422] px-8 py-4 font-display text-2xl retro-border retro-shadow-hover hover:bg-[#EAAA00] transition-colors inline-flex items-center gap-3">
               בואו לעבוד איתנו <Heart className="w-6 h-6 fill-current" />
-            </button>
+            </a>
           </div>
         </div>
       </section>

@@ -2,6 +2,7 @@ import React from 'react';
 import { Phone, Mail, MapPin, ArrowLeft } from 'lucide-react';
 
 export default function Contact() {
+  const BASE = import.meta.env.BASE_URL;
   return (
     <div dir="rtl" className="min-h-screen bg-[#fafaf9] text-[#1c1917] font-sans selection:bg-[#d6e2db] selection:text-[#1c1917] flex flex-col">
       {/* Navbar */}
@@ -11,10 +12,10 @@ export default function Contact() {
             ניקיון פלוס.
           </div>
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-[#57534e]">
-            <a href="#" className="hover:text-[#1c1917] transition-colors">בית</a>
-            <a href="#services" className="hover:text-[#1c1917] transition-colors">שירותים</a>
-            <a href="#about" className="hover:text-[#1c1917] transition-colors">אודות</a>
-            <a href="#contact" className="text-[#1c1917] font-semibold transition-colors">צור קשר</a>
+            <a href={`${BASE}preview/clean-minimalism/Clean`} className="hover:text-[#1c1917] transition-colors">בית</a>
+            <a href={`${BASE}preview/clean-minimalism/Services`} className="hover:text-[#1c1917] transition-colors">שירותים</a>
+            <a href={`${BASE}preview/clean-minimalism/About`} className="hover:text-[#1c1917] transition-colors">אודות</a>
+            <a href={`${BASE}preview/clean-minimalism/Contact`} className="text-[#1c1917] font-semibold transition-colors">צור קשר</a>
           </div>
           <div>
             <a href="#contact" className="hidden md:inline-flex items-center justify-center bg-[#293d35] text-white px-6 py-2.5 text-sm font-medium hover:bg-[#1f2e28] transition-colors">

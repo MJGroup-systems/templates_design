@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Camera, Sparkles, CalendarHeart, Phone, Mail, MapPin, ArrowLeft } from 'lucide-react';
 
+const BASE = import.meta.env.BASE_URL;
+
 // Using a placeholder component structure for standard tier
 export default function ClickStudioGrid() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,10 +38,10 @@ export default function ClickStudioGrid() {
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
           <div className="text-2xl font-bold tracking-tight">קליק<span className="text-[#B79A88]">.</span></div>
           <div className="hidden md:flex gap-8 text-sm font-medium tracking-wide">
-            <a href="#portfolio" className="hover:text-[#B79A88] transition-colors">עבודות</a>
-            <a href="#services" className="hover:text-[#B79A88] transition-colors">שירותים</a>
-            <a href="#about" className="hover:text-[#B79A88] transition-colors">הסטודיו</a>
-            <a href="#contact" className="hover:text-[#B79A88] transition-colors">צור קשר</a>
+            <a href={BASE + 'preview/visual-grid/Grid'} className="text-[#B79A88] transition-colors">עבודות</a>
+            <a href={BASE + 'preview/visual-grid/Services'} className="hover:text-[#B79A88] transition-colors">שירותים</a>
+            <a href={BASE + 'preview/visual-grid/About'} className="hover:text-[#B79A88] transition-colors">הסטודיו</a>
+            <a href={BASE + 'preview/visual-grid/Contact'} className="hover:text-[#B79A88] transition-colors">צור קשר</a>
           </div>
           <button className="md:hidden">
             <div className="w-6 h-0.5 bg-current mb-1.5"></div>
@@ -63,7 +65,7 @@ export default function ClickStudioGrid() {
             <a href="#portfolio" className="bg-[#1C1C1C] text-white px-8 py-4 rounded-none font-medium hover:bg-[#333333] transition-colors inline-flex items-center gap-2">
               לתיק העבודות <ArrowLeft className="w-4 h-4" />
             </a>
-            <a href="#contact" className="border border-[#1C1C1C] px-8 py-4 rounded-none font-medium hover:bg-[#1C1C1C] hover:text-white transition-colors">
+            <a href={BASE + 'preview/visual-grid/Contact'} className="border border-[#1C1C1C] px-8 py-4 rounded-none font-medium hover:bg-[#1C1C1C] hover:text-white transition-colors">
               תיאום פגישה
             </a>
           </div>

@@ -11,6 +11,8 @@ import {
   Award
 } from 'lucide-react';
 
+const BASE = import.meta.env.BASE_URL;
+
 // --- Hooks ---
 function useIntersectionObserver(options = {}) {
   const [isIntersecting, setIsIntersecting] = useState(false);
@@ -68,10 +70,10 @@ export default function AboutPage() {
   }, []);
 
   const navLinks = [
-    { name: 'בית', href: '#' },
-    { name: 'אודות', href: '#about' },
-    { name: 'שירותים', href: '#services' },
-    { name: 'צור קשר', href: '#contact' },
+    { name: 'בית', href: `${BASE}preview/modern-corporate/Corporate`, active: false },
+    { name: 'אודות', href: `${BASE}preview/modern-corporate/About`, active: true },
+    { name: 'שירותים', href: `${BASE}preview/modern-corporate/Services`, active: false },
+    { name: 'צור קשר', href: `${BASE}preview/modern-corporate/Contact`, active: false },
   ];
 
   return (
@@ -114,13 +116,17 @@ export default function AboutPage() {
               <a 
                 key={link.name} 
                 href={link.href} 
-                className={`text-sm font-medium transition-colors hover:text-[#C5A47E] ${scrolled ? 'text-slate-700' : 'text-white/90'}`}
+                className={`text-sm font-medium transition-colors hover:text-[#C5A47E] ${
+                  link.active 
+                    ? 'text-[#C5A47E]' 
+                    : scrolled ? 'text-slate-700' : 'text-white/90'
+                }`}
               >
                 {link.name}
               </a>
             ))}
             <a 
-              href="#contact"
+              href={`${BASE}preview/modern-corporate/Contact`}
               className={`text-sm font-semibold px-6 py-2.5 transition-all duration-300 border ${
                 scrolled 
                   ? 'border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white' 
@@ -146,7 +152,11 @@ export default function AboutPage() {
               <a 
                 key={link.name} 
                 href={link.href} 
-                className="px-6 py-4 text-slate-700 hover:bg-slate-50 hover:text-[#C5A47E] font-medium"
+                className={`px-6 py-4 font-medium transition-colors ${
+                  link.active 
+                    ? 'bg-slate-50 text-[#C5A47E]' 
+                    : 'text-slate-700 hover:bg-slate-50 hover:text-[#C5A47E]'
+                }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.name}
@@ -315,10 +325,10 @@ export default function AboutPage() {
             <div>
               <h4 className="text-white font-bold mb-6">ניווט מהיר</h4>
               <ul className="space-y-4 text-sm">
-                <li><a href="#" className="hover:text-white transition-colors">בית</a></li>
-                <li><a href="#about" className="hover:text-white transition-colors">אודות המשרד</a></li>
-                <li><a href="#services" className="hover:text-white transition-colors">שירותים ותחומי התמחות</a></li>
-                <li><a href="#contact" className="hover:text-white transition-colors">צור קשר</a></li>
+                <li><a href={`${BASE}preview/modern-corporate/Corporate`} className="hover:text-white transition-colors">בית</a></li>
+                <li><a href={`${BASE}preview/modern-corporate/About`} className="hover:text-white transition-colors">אודות המשרד</a></li>
+                <li><a href={`${BASE}preview/modern-corporate/Services`} className="hover:text-white transition-colors">שירותים ותחומי התמחות</a></li>
+                <li><a href={`${BASE}preview/modern-corporate/Contact`} className="hover:text-white transition-colors">צור קשר</a></li>
               </ul>
             </div>
             
