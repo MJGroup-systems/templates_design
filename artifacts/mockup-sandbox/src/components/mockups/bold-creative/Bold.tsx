@@ -89,6 +89,12 @@ export default function LuxeStudio() {
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-40 p-6 flex justify-between items-center mix-blend-difference">
         <div className="text-3xl font-black tracking-tighter">לוקס.</div>
+        <div className="hidden md:flex items-center gap-6 font-bold text-sm tracking-widest uppercase">
+          <a href="#" className="text-[#FF0055] transition-colors">בית</a>
+          <a href="#" className="hover:text-[#FF0055] transition-colors">אודות</a>
+          <a href="#" className="hover:text-[#FF0055] transition-colors">שירותים</a>
+          <a href="#" className="hover:text-[#FF0055] transition-colors">צור קשר</a>
+        </div>
         <button className="text-sm font-bold tracking-widest uppercase hover:text-[#FF0055] transition-colors border-b-2 border-transparent hover:border-[#FF0055] pb-1">
           קבעי תור
         </button>

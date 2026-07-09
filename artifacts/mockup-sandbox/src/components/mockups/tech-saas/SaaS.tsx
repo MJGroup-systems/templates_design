@@ -103,10 +103,10 @@ export default function FlowSaaS() {
   }, []);
 
   const navLinks = [
-    { name: 'מוצר', href: '#product' },
-    { name: 'יכולות', href: '#features' },
-    { name: 'אינטגרציות', href: '#integrations' },
-    { name: 'תמחור', href: '#pricing' },
+    { name: 'בית', href: '#' },
+    { name: 'אודות', href: '#' },
+    { name: 'שירותים', href: '#' },
+    { name: 'צור קשר', href: '#' },
   ];
 
   return (

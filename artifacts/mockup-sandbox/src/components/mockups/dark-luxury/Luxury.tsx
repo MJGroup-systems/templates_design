@@ -120,7 +120,7 @@ export default function LuxuryLawFirm() {
           </div>
           
           <nav className="hidden md:flex gap-10">
-            {['הפילוסופיה', 'תחומי התמחות', 'השותפים', 'צור קשר'].map((item, i) => (
+            {['בית', 'אודות', 'שירותים', 'צור קשר'].map((item, i) => (
               <a key={i} href={`#${item}`} className="text-sm tracking-wider text-[#a19f99] hover:text-[#c2a672] transition-colors duration-300">
                 {item}
               </a>
@@ -138,7 +138,7 @@ export default function LuxuryLawFirm() {
 
         {/* Mobile Menu */}
         <div className={`md:hidden fixed inset-0 bg-[#050505] z-10 transition-transform duration-500 flex flex-col items-center justify-center gap-8 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-          {['הפילוסופיה', 'תחומי התמחות', 'השותפים', 'צור קשר'].map((item, i) => (
+          {['בית', 'אודות', 'שירותים', 'צור קשר'].map((item, i) => (
             <a key={i} href={`#${item}`} onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-serif-he text-white hover:text-[#c2a672] transition-colors">
               {item}
             </a>
@@ -416,7 +416,7 @@ export default function LuxuryLawFirm() {
             <div>
               <h4 className="text-white mb-6 tracking-wider text-sm">ניווט</h4>
               <ul className="text-[#a19f99] text-sm space-y-3 font-light">
-                {['הפילוסופיה', 'תחומי התמחות', 'השותפים', 'קריירה', 'צור קשר'].map(item => (
+                {['בית', 'אודות', 'שירותים', 'צור קשר'].map(item => (
                   <li key={item}><a href={`#${item}`} className="hover:text-[#c2a672] transition-colors">{item}</a></li>
                 ))}
               </ul>

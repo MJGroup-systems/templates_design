@@ -72,9 +72,9 @@ export default function CorporateLandingPage() {
   }, []);
 
   const navLinks = [
+    { name: 'בית', href: '#' },
+    { name: 'אודות', href: '#about' },
     { name: 'שירותים', href: '#services' },
-    { name: 'הגישה שלנו', href: '#about' },
-    { name: 'תחומי התמחות', href: '#services' },
     { name: 'צור קשר', href: '#contact' },
   ];
 

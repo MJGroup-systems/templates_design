@@ -97,9 +97,10 @@ export default function OrganicRestaurant() {
             שורש.
           </div>
           <div className="hidden md:flex gap-8 items-center text-lg font-semibold">
-            <a href="#about" className="hover:text-[#B65842] transition-colors">הסיפור שלנו</a>
-            <a href="#menu" className="hover:text-[#B65842] transition-colors">מהשדה לצלחת</a>
-            <a href="#atmosphere" className="hover:text-[#B65842] transition-colors">אווירה</a>
+            <a href="#" className="hover:text-[#B65842] transition-colors">ראשי</a>
+            <a href="#about" className="hover:text-[#B65842] transition-colors">אודות</a>
+            <a href="#services" className="hover:text-[#B65842] transition-colors">שירותים</a>
+            <a href="#contact" className="hover:text-[#B65842] transition-colors">צור קשר</a>
           </div>
           <button className="bg-[#B65842] text-[#F7F4EB] px-6 py-2.5 rounded-full font-semibold hover:bg-[#9C4835] transition-colors shadow-sm flex items-center gap-2">
             הזמינו שולחן

@@ -11,9 +11,10 @@ export default function CleanMinimalismMockup() {
             ניקיון פלוס.
           </div>
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-[#57534e]">
+            <a href="#" className="text-[#1c1917] font-semibold transition-colors">בית</a>
             <a href="#services" className="hover:text-[#1c1917] transition-colors">שירותים</a>
-            <a href="#about" className="hover:text-[#1c1917] transition-colors">הגישה שלנו</a>
-            <a href="#testimonials" className="hover:text-[#1c1917] transition-colors">לקוחות מספרים</a>
+            <a href="#about" className="hover:text-[#1c1917] transition-colors">אודות</a>
+            <a href="#contact" className="hover:text-[#1c1917] transition-colors">צור קשר</a>
           </div>
           <div>
             <a href="#contact" className="hidden md:inline-flex items-center justify-center bg-[#293d35] text-white px-6 py-2.5 text-sm font-medium hover:bg-[#1f2e28] transition-colors">

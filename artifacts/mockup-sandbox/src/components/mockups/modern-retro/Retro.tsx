@@ -68,20 +68,20 @@ export default function RetroDiner() {
           </div>
 
           <nav className="hidden md:flex items-center gap-8 font-bold text-lg">
-            <a href="#menu" className="hover:text-[#D1492E] transition-colors relative group">
-              תפריט
+            <a href="#" className="hover:text-[#D1492E] transition-colors relative group text-[#D1492E]">
+              בית
+              <span className="absolute -bottom-1 left-0 w-full h-1 bg-[#D1492E] origin-right scale-x-100 transition-transform"></span>
+            </a>
+            <a href="#" className="hover:text-[#D1492E] transition-colors relative group">
+              אודות
               <span className="absolute -bottom-1 left-0 w-full h-1 bg-[#D1492E] origin-right scale-x-0 group-hover:scale-x-100 transition-transform"></span>
             </a>
-            <a href="#about" className="hover:text-[#D1492E] transition-colors relative group">
-              הסיפור שלנו
+            <a href="#" className="hover:text-[#D1492E] transition-colors relative group">
+              שירותים
               <span className="absolute -bottom-1 left-0 w-full h-1 bg-[#D1492E] origin-right scale-x-0 group-hover:scale-x-100 transition-transform"></span>
             </a>
-            <a href="#reviews" className="hover:text-[#D1492E] transition-colors relative group">
-              לקוחות
-              <span className="absolute -bottom-1 left-0 w-full h-1 bg-[#D1492E] origin-right scale-x-0 group-hover:scale-x-100 transition-transform"></span>
-            </a>
-            <a href="#contact" className="hover:text-[#D1492E] transition-colors relative group">
-              מיקום
+            <a href="#" className="hover:text-[#D1492E] transition-colors relative group">
+              צור קשר
               <span className="absolute -bottom-1 left-0 w-full h-1 bg-[#D1492E] origin-right scale-x-0 group-hover:scale-x-100 transition-transform"></span>
             </a>
           </nav>
