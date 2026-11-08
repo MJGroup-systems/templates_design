@@ -1,0 +1,7 @@
+node_modules/
+text/
+*.png
+!cover.jpg
+out/
+audio/
+qa/

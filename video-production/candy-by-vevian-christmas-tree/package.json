@@ -1,0 +1,13 @@
+{
+  "name": "candy-by-vevian-christmas-tree-reel",
+  "private": true,
+  "description": "Studio-style 9:16 product reel pipeline (Cloudinary AI plates + Python compositor + Chromium-rendered Hebrew titles)",
+  "scripts": {
+    "text": "node src/render_text.js ."
+  },
+  "dependencies": {
+    "@fontsource/frank-ruhl-libre": "^5.0.0",
+    "@fontsource/great-vibes": "^5.0.0",
+    "@fontsource/heebo": "^5.0.0"
+  }
+}
